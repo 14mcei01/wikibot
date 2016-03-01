@@ -34,7 +34,10 @@ function process(){
 		 hr = hr -12;
 		 format = "pm"
 	 }
-	 var string ="<div class=\"row\"><div class=\"col-lg-12\"><div class=\"media\"><a class=\"pull-left\" href=\"#\"><img class=\"media-object img-circle\" src=\"user.png\" height=\"22\" width=\"22\" alt=\"\"></a><div class=\"media-body\"><h4 class=\"media-heading\">"+name+"<span class=\"small pull-right\">"+hr + ":" + currentdate.getMinutes() +":"+format+"</span></h4><p>"+msg+"</p> </div></div></div></div><hr>";
+	 if(hr==00){
+		 hr = 12;
+	 }
+	 var string ="<div class=\"row\"><div class=\"col-lg-12\" ><div class=\"media\"><a class=\"pull-left\" href=\"#\"><img class=\"media-object img-circle\" src=\"user.png\" height=\"22\" width=\"22\" alt=\"\"></a><div class=\"media-body\"><h4 class=\"media-heading\">"+name+" "+"<span class=\"small pull-right\">"+hr + ":" + currentdate.getMinutes() +":"+format+"</span></h4><p>"+msg+"</p> </div></div></div></div><hr>";
 	  $('#msg').append(string);
 	 search = search.toLowerCase().replace(/\b[a-z]/g, function(letter) {
      return letter.toUpperCase();
@@ -70,18 +73,22 @@ function process(){
 			name = "Wiki";
 		console.log(blurb);
 			if(mar==-1){
-				var string = "<div class=\"row\"> <div class=\"col-lg-13\"><div class=\"media\"><a class=\"pull-left\" href=\"#\"><img class=\"media-object img-circle\" src=\"sad.png\" height=\"32\" width=\"32\" alt=\"\"></a><div class=\"media-body\"><h4 class=\"media-heading\">Wiki<span class=\"small pull-right\">"+hr + ":" + currentdate.getMinutes() +":"+format+"</span></h4><p>Sorry, i was unable to find that. Try providing more information</p></div></div></div></div><hr>";
+				var string = "<div class=\"row\" style=\"float:right\"> <div class=\"col-lg-13\"><div class=\"media\"><a class=\"pull-left\" href=\"#\"><img class=\"media-object img-circle\" src=\"sad.png\" height=\"32\" width=\"32\" alt=\"\"></a><div class=\"media-body\"><h4 class=\"media-heading\">Wiki <span class=\"small pull-right\">"+hr + ":" + currentdate.getMinutes() +":"+format+"</span></h4><p>Sorry, i was unable to find that. Try providing more information</p></div></div></div></div><hr>";
 				$('#msg').append(string);
 				$('#msg').focus().val($('#msg'));
 			}else{
-				var string = "<div class=\"row\"> <div class=\"col-lg-13\"><div class=\"media\"><a class=\"pull-left\" href=\"#\"><img class=\"media-object img-circle\" src=\"robot.png\" height=\"32\" width=\"32\" alt=\"\"></a><div class=\"media-body\"><h4 class=\"media-heading\">Wiki<span class=\"small pull-right\">"+hr + ":" + currentdate.getMinutes() +":"+format+"</span></h4><p>"+blurb.text()+"</p></div></div></div></div><hr>";
+				var string = "<div class=\"row\"> <div class=\"col-lg-13\" ><div class=\"media\"  ><a class=\"pull-left\" href=\"#\"><img class=\"media-object img-circle\" src=\"robot.png\" height=\"32\" width=\"32\" alt=\"\"></a><div class=\"media-body\"><h4 class=\"media-heading\">Wiki <span class=\"small pull-right\">"+hr + ":" + currentdate.getMinutes() +":"+format+"</span></h4><p>"+blurb.text()+"</p></div></div></div></div><hr>";
 				$('#msg').append(string);
 				$('#msg').focus().val($('#msg'));
 			}
             
         },
-        error: function (errorMessage) {
-        }
+        error: function(jqXHR, exception) {
+			alert("hwe");
+			var string = "<div class=\"row\"> <div class=\"col-lg-13\"><div class=\"media\"><a class=\"pull-left\" href=\"#\"><img class=\"media-object img-circle\" src=\"angry.png\" height=\"32\" width=\"32\" alt=\"\"></a><div class=\"media-body\"><h4 class=\"media-heading\">Wiki <span class=\"small pull-right\">"+hr + ":" + currentdate.getMinutes() +":"+format+"</span></h4><p>uuhh!! This internet !! I tell you, I gonna Kill him.</p></div></div></div></div><hr>";
+				$('#msg').append(string);
+				$('#msg').focus().val($('#msg'));
+        },
     });
 }
 });
