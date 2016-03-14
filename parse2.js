@@ -1,8 +1,15 @@
 $(document).ready(function(){
+<<<<<<< HEAD
 
 	var currentdate = new Date();
 
 
+=======
+	
+	var currentdate = new Date();
+	
+	
+>>>>>>> origin/master
  $( "#search" ).click(function() {
 	 var search = document.getElementById("term").value
 	 var name ="You";
@@ -68,6 +75,7 @@ function process(){
 	}
 	else{
 		func_search(search);
+<<<<<<< HEAD
 
 	}
 }
@@ -76,6 +84,16 @@ function func_search(){
 
 	var search = arguments[0];
 
+=======
+		
+	}	 
+}
+
+function func_search(){
+	
+	var search = arguments[0];
+	
+>>>>>>> origin/master
 	 search = search.toLowerCase().replace(/\b[a-z]/g, function(letter) {
      return letter.toUpperCase();
      });
@@ -96,7 +114,11 @@ function func_search(){
 			// var markup = data.query.pages.mars;
 
 			var ans = markup[mar]
+<<<<<<< HEAD
 
+=======
+			
+>>>>>>> origin/master
             var blurb = $('<div></div>').html(ans['extract']);
 
             // remove links as they will not work
@@ -130,9 +152,15 @@ function func_search(){
 }
 
 function func_forcats(){
+<<<<<<< HEAD
 
 	var city = arguments[0].split(" ");;
 
+=======
+	
+	var city = arguments[0].split(" ");;
+	
+>>>>>>> origin/master
 	 $.ajax({
         type: "GET",
         url: "http://api.openweathermap.org/data/2.5/weather?q="+city[1]+"&appid=e5471cc3f2f4dd55c3dccf8531037468&callback=?",
@@ -140,7 +168,11 @@ function func_forcats(){
         async: false,
         dataType: "json",
         success: function (data, textStatus, jqXHR) {
+<<<<<<< HEAD
 
+=======
+			
+>>>>>>> origin/master
 			var  status = "Status : "+data.weather[0].main;
 			var  temp_curr = "Current Temprature : "+parseFloat(data.main.temp - 273.15).toFixed(2) +"&deg Celcius";
 			var temp_min = "Minimum Temprature : "+(data.main.temp_min - 273.15) + "&deg Celcius";
@@ -149,7 +181,11 @@ function func_forcats(){
 			var text_msg = status+" <br>"+temp_curr+"<br>"+clouds;//+"<br>"+temp_min+"<br>"+temp_max;
 			 var wiki_str = "<div class=\"row\"> <div class=\"col-lg-13\" ><div class=\"media\"  ><a class=\"pull-left\" href=\"#\"><img class=\"media-object img-circle\" src=\"robot.png\" height=\"32\" width=\"32\" alt=\"\"></a><div class=\"media-body\"><h4 class=\"media-heading\">Wiki <span class=\"small pull-right\">"+hr + ":" + currentdate.getMinutes() +":"+format+"</span></h4><p>"+text_msg+"</p></div></div></div></div><hr>";
 			$('#msg').append(wiki_str);
+<<<<<<< HEAD
 
+=======
+			
+>>>>>>> origin/master
 		},
 		error: function(jqXHR, exception) {
 			alert("hwe");
@@ -162,7 +198,11 @@ function func_forcats(){
 
 function func_pnr(){
 	var pnr = arguments[0].split(" ");
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> origin/master
 	$.ajax({
         type: "GET",
         url: "http://api.railwayapi.com/pnr_status/pnr/"+pnr[1]+"/apikey/ndkab3924/",
@@ -170,7 +210,11 @@ function func_pnr(){
         async: false,
         dataType: "json",
         success: function (data, textStatus, jqXHR) {
+<<<<<<< HEAD
 
+=======
+			
+>>>>>>> origin/master
 			var  train_name = "Train Name : "+data.train_name;
 			var  tarin_no = "Train No : "+data.train_num;
 			var pnr_no = "Pnr : "+data.pnr;
@@ -179,7 +223,11 @@ function func_pnr(){
 			 for(var i=0;i<data.passengers.length;i++){
 				 passenger_pnr_status = passenger_pnr_status + "Pasenger "+(i+1)+" : "+data.passengers.current_status +" <br>";
 			 }
+<<<<<<< HEAD
 
+=======
+			
+>>>>>>> origin/master
 			//var clouds = "Cloudiness :"+(data.clouds.all)+" %";
 			var text_msg = train_name+" <br>"+tarin_no+"<br>"+pnr_no+"<br>"+chart_status+"<br>"+passenger_pnr_status;
 			 var wiki_str = "<div class=\"row\"> <div class=\"col-lg-13\" ><div class=\"media\"  ><a class=\"pull-left\" href=\"#\"><img class=\"media-object img-circle\" src=\"robot.png\" height=\"32\" width=\"32\" alt=\"\"></a><div class=\"media-body\"><h4 class=\"media-heading\">Rail Bot <span class=\"small pull-right\">"+hr + ":" + currentdate.getMinutes() +":"+format+"</span></h4><p>"+text_msg+"</p></div></div></div></div><hr>";
@@ -187,7 +235,11 @@ function func_pnr(){
 			console.log(data);
 		},
 		error: function(jqXHR, exception) {
+<<<<<<< HEAD
 
+=======
+			
+>>>>>>> origin/master
 			var string = "<div class=\"row\"> <div class=\"col-lg-13\"><div class=\"media\"><a class=\"pull-left\" href=\"#\"><img class=\"media-object img-circle\" src=\"angry.png\" height=\"32\" width=\"32\" alt=\"\"></a><div class=\"media-body\"><h4 class=\"media-heading\">Wiki <span class=\"small pull-right\">"+hr + ":" + currentdate.getMinutes() +":"+format+"</span></h4><p>uuhh!! This IRCTC wale !! I tell you, I gonna Kill them.</p></div></div></div></div><hr>";
 				$('#msg').append(string);
 				$('#msg').focus().val($('#msg'));
