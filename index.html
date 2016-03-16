@@ -12,7 +12,7 @@
 </head>
 <body>
     <div data-role="page" id="login" data-theme="a">
-        <div data-role="header" data-theme="b">
+        <div data-role="header" data-theme="b" data-position="fixed">
 		<center>
             <p><font color="#0099ff" style="font-size: 100%">Wiki BoT</font><span id='loadingmessage' style='display:none'>
   <img src='ajax-loader.gif' height="2%" width="10%" />
@@ -24,7 +24,7 @@
            <span id="msg" style="height:80%">  </span>                    
         </div>
   
-        <div id="box" style="">
+        <div id="box" data-role="footer" data-position="fixed">
 		 <form role="form">
                             <div class="form-group">
                                 <textarea id="term" class="form-control" placeholder="Enter message..." value="" style="width:100%"></textarea>
