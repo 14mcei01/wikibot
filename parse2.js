@@ -4,6 +4,7 @@ $(document).ready(function(){
 	
 	
  $( "#search" ).click(function() {
+	 
 	 var search = document.getElementById("term").value
 	 var name ="You";
 	 var msg=search;
@@ -24,6 +25,7 @@ $(document).ready(function(){
 });
 
 $('#term').keyup(function (e) {
+	
  var key = e.which;
  if(key == 13)  // the enter key code
   {
@@ -59,6 +61,7 @@ $( "#help" ).click(function() {
 
 
 function process(){
+	 $('#loadingmessage').show();
 	 var search = document.getElementById("term").value
 	  search = search.toLowerCase();
 	if (~search.indexOf("forecast")){
@@ -127,6 +130,9 @@ function func_search(){
 				$('#msg').append(string);
 				$('#msg').focus().val($('#msg'));
         },
+		complete : function(){
+			  $('#loadingmessage').hide(); 
+		},
     });
 }
 
@@ -158,6 +164,9 @@ function func_forcats(){
 				$('#msg').append(string);
 				$('#msg').focus().val($('#msg'));
         },
+		complete : function(){
+			  $('#loadingmessage').hide(); 
+		},
     });
 }
 
@@ -193,6 +202,9 @@ function func_pnr(){
 				$('#msg').append(string);
 				$('#msg').focus().val($('#msg'));
         },
+		complete : function(){
+			  $('#loadingmessage').hide(); 
+		},
     });
 }
 });
