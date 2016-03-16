@@ -60,7 +60,8 @@ $( "#help" ).click(function() {
 
 function process(){
 	 var search = document.getElementById("term").value
-	if (~search.indexOf("forcast")){
+	  search = search.toLowerCase();
+	if (~search.indexOf("forecast")){
 		func_forcats(search);
 	}
 	else if(~search.indexOf("pnr")){
