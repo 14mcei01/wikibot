@@ -1,8 +1,8 @@
 $(document).ready(function(){
 	
 	var currentdate = new Date();
-	window.analytics.startTrackerWithId('UA-46724967-3')
-	window.analytics.trackView('Screen Title')
+	window.analytics.startTrackerWithId('UA-46724967-3');
+	window.analytics.trackView('Screen Title');
  $( "#search" ).click(function() {
 	 
 	 var search = document.getElementById("term").value
