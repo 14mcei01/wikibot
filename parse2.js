@@ -206,12 +206,4 @@ function func_pnr(){
 		},
     });
 }
-function tracking(){
-	 $.ajax({
-        type: "GET",
-        url: "http://easysecure.blogspot.in",
-		async: false,
-		success: function(data){
-      alert("hi");
-   }
-});
+
