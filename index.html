@@ -7,7 +7,14 @@
     <link rel="stylesheet" href="css/jquery.mobile-1.4.2.min.css" /> 
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="js/jquery.mobile-1.4.2.min.js"></script>    
-    
+    <script src="js/GALocalStorage.js"></script> 	 
+ <script>
+  
+    ga_storage._setAccount('UA-75239696-1'); //Replace with your own
+    ga_storage._setDomain('none');
+    ga_storage._trackPageview('/index.html');
+	
+</script>
 </head>
 <body  onload="onDeviceReady()">
     <div data-role="page" id="login" data-theme="a">
