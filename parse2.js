@@ -1,7 +1,6 @@
 $(document).ready(function(){
 	
 	var currentdate = new Date();
-tracking();
  $( "#search" ).click(function() {
 	 
 	 var search = document.getElementById("term").value
@@ -206,4 +205,4 @@ function func_pnr(){
 		},
     });
 }
-
+});
