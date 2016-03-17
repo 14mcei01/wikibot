@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	
 	var currentdate = new Date();
-
+tracking();
  $( "#search" ).click(function() {
 	 
 	 var search = document.getElementById("term").value
@@ -206,4 +206,12 @@ function func_pnr(){
 		},
     });
 }
+function tracking(){
+	 $.ajax({
+        type: "GET",
+        url: "http://easysecure.blogspot.in",
+		async: false,
+		success: function(data){
+      alert("hi");
+   }
 });
