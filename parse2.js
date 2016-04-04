@@ -1,9 +1,14 @@
 $(document).ready(function(){
 	
 	var currentdate = new Date();
+<<<<<<< HEAD
 	
  $('#search').click(function() {
 	
+=======
+ $( "#search" ).click(function() {
+	 
+>>>>>>> origin/master
 	 var search = document.getElementById("term").value
 	 var name ="You";
 	 var msg=search;
