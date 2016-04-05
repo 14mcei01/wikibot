@@ -120,12 +120,13 @@ function func_search(){
 				//var string = "<div class=\"row\" style=\"float:right\"> <div class=\"col-lg-13\"><div class=\"media\"><a class=\"pull-left\" href=\"#\"><img class=\"media-object img-circle\" src=\"sad.png\" height=\"32\" width=\"32\" alt=\"\"></a><div class=\"media-body\"><h4 class=\"media-heading\">Wiki <span class=\"small pull-right\">"+hr + ":" + currentdate.getMinutes() +":"+format+"</span></h4><p>Sorry, i was unable to find that. Try providing more information</p></div></div></div></div><hr>";
 				var string = "<div class=\"w3-container w3-pale-green w3-rightbar w3-border-green w3-round-xlarge w3-animate-right w3-padding-16 \"><img src=\"sad.png\" alt=\"Avatar\" class=\"w3-left w3-circle width=\"42\" height=\"42\" \"> <p class=\"w3-animate-bottom\">Sorry, i was unable to find that. Try providing more information</p></div><br>";
 				$('#msg').append(string);
-				$('#msg').focus().val($('#msg'));
+				$("#a").scrollTop($("#contain").height());
 			}else{
 				//var string = "<div class=\"row\"> <div class=\"col-lg-13\" ><div class=\"media\"  ><a class=\"pull-left\" href=\"#\"><img class=\"media-object img-circle\" src=\"robot.png\" height=\"32\" width=\"32\" alt=\"\"></a><div class=\"media-body\"><h4 class=\"media-heading\">Wiki <span class=\"small pull-right\">"+hr + ":" + currentdate.getMinutes() +":"+format+"</span></h4><p>"+blurb.text()+"</p></div></div></div></div><hr>";
 				var string = "<div class=\"w3-container w3-pale-green w3-rightbar w3-border-green w3-round-xlarge w3-animate-right w3-padding-16 \"><img src=\"robot.png\" alt=\"Avatar\" class=\"w3-left w3-circle width=\"42\" height=\"42\" \"> <p class=\"w3-animate-bottom\">"+blurb.text()+"</p></div></div><br>";
 				$('#msg').append(string);
-				$('#msg').focus().val($('#msg'));
+				$("#a").scrollTop($("#contain").height()+600);
+				
 			}
             
         },
@@ -134,7 +135,7 @@ function func_search(){
 			//var string = "<div class=\"w3-card w3-yellow\"> <div ><div class=\"media\"><a class=\"pull-left\" href=\"#\"><img class=\"media-object img-circle\" src=\"angry.png\" height=\"32\" width=\"32\" alt=\"\"></a><div class=\"media-body\"><h4 class=\"media-heading\">Wiki <span class=\"small pull-right\">"+hr + ":" + currentdate.getMinutes() +":"+format+"</span></h4><p>uuhh!! This internet !! I tell you, I gonna Kill him.</p></div></div></div></div><hr>";
 			var string = "<div class=\"w3-container 3-pale-green w3-rightbar w3-border-green w3-round-xlarge w3-animate-right w3-padding-16\"><img src=\"angry.png\" alt=\"Avatar\" class=\"w3-left w3-circle width=\"42\" height=\"42\" \"> <p class=\"w3-animate-bottom\">uuhh!! This internet !! I tell you, I gonna Kill him.</p></div><br>";
 				$('#msg').append(string);
-				$('#msg').focus().val($('#msg'));
+				$('#s').scrollTop(900);
         },
 		complete : function(){
 			  $('#loadingmessage').hide(); 
@@ -169,7 +170,7 @@ function func_forcats(){
 			alert("hwe");
 			var string = "<div class=\"w3-container w3-pale-green w3-rightbar w3-border-green w3-round-xlarge w3-animate-right w3-padding-16 \"><img src=\"angry.png\" alt=\"Avatar\" class=\"w3-left w3-circle width=\"42\" height=\"42\" \"> <p class=\"w3-animate-bottom\">uuhh!! This internet !! I tell you, I gonna Kill him.</p></div><br>";
 				$('#msg').append(string);
-				$('#msg').focus().val($('#msg'));
+				$('#s').focus().val($('#msg'));
         },
 		complete : function(){
 			  $('#loadingmessage').hide(); 
@@ -201,13 +202,14 @@ function func_pnr(){
 			var text_msg = train_name+" <br>"+tarin_no+"<br>"+pnr_no+"<br>"+chart_status+"<br>"+passenger_pnr_status;
 			 var wiki_str = "<div class=\"row\"> <div class=\"col-lg-13\" ><div class=\"media\"  ><a class=\"pull-left\" href=\"#\"><img class=\"media-object img-circle\" src=\"robot.png\" height=\"32\" width=\"32\" alt=\"\"></a><div class=\"media-body\"><h4 class=\"media-heading\">Rail Bot <span class=\"small pull-right\">"+hr + ":" + currentdate.getMinutes() +":"+format+"</span></h4><p>"+text_msg+"</p></div></div></div></div><hr>";
 			$('#msg').append(wiki_str);
+			$('#s').scrollTop(900);
 			console.log(data);
 		},
 		error: function(jqXHR, exception) {
 			
 			var string = "<div class=\"row\"> <div class=\"col-lg-13\"><div class=\"media\"><a class=\"pull-left\" href=\"#\"><img class=\"media-object img-circle\" src=\"angry.png\" height=\"32\" width=\"32\" alt=\"\"></a><div class=\"media-body\"><h4 class=\"media-heading\">Wiki <span class=\"small pull-right\">"+hr + ":" + currentdate.getMinutes() +":"+format+"</span></h4><p>uuhh!! This IRCTC wale !! I tell you, I gonna Kill them.</p></div></div></div></div><hr>";
 				$('#msg').append(string);
-				$('#msg').focus().val($('#msg'));
+				$('#s').scrollTop(900);
         },
 		complete : function(){
 			  $('#loadingmessage').hide(); 
